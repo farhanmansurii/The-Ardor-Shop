@@ -4,7 +4,7 @@ export default function Home({ data }) {
   return (
     <>
     <CarousalProducts products={data}/>
-      <ProductRow data={data} title={'hi'}/>
+      <ProductRow data={data} title={'All Products'}/>
     </>
   );
 }

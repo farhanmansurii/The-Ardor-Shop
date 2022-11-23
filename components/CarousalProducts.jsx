@@ -1,13 +1,12 @@
 import { Button } from '@nextui-org/react';
 import Carousel from 'nuka-carousel/lib/carousel';
-import { AiOutlineArrowRight } from 'react-icons/ai';
 import { GrFormNext, GrFormPrevious } from 'react-icons/gr';
 export default function CarousalProducts({ products }) {
   return (
     <>
       <>
         <div className="flex w-11/12 lg:w-10/12 mx-auto p-2 font-semibold mt-4 mb-3 text-2xl uppercase  ">
-          Top Products <AiOutlineArrowRight className="my-auto mx-2" />
+        
         </div>
         <div className="w-10/12 mx-auto">
           <Carousel

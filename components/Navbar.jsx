@@ -1,17 +1,28 @@
 import Link from 'next/link';
 import { useSelector } from 'react-redux';
+import LoginModal from './LoginModal';
 export default function Navbar() {
   const products = useSelector((state) => state.cart.cartItems);
   return (
     <nav className="sticky w-10/12 bg-gray-200/50 z-[1] filter-blur backdrop-blur-sm dark:bg-gray-1000/40 my-4 md:top-4 max-w-2xl px-4 py-2  rounded-md mx-auto flex justify-between items-center">
-      <div className="flex flex-row gap-1 text-tertiary">
+      <div className="flex flex-row gap-2 text-black text-tertiary">
         <Link href="/">
-          <div className="transition-all cursor-pointer hover:text-primary">Home</div>
-        </Link>
-        <Link href="/about">
-          <div className="transition-all cursor-pointer hover:text-primary">About</div>
-        </Link>
+           <div className='text-black'>
+          Home
+          </div>
+           </Link>
+        <Link href="/cart">
+           <div className='text-black'>
+          Cart
+          </div>
+           </Link>
+        <Link href="/login">
+           <div className='text-black'>
+          Login
+          </div>
+           </Link>
       </div>
+      <LoginModal />
       <div className="flex flex-row items-center space-x-4">
         <div>{products.length}</div>
         <button aria-label="Toggle Dark Mode" type="button" className="flex items-center justify-center transition-all bg-gray-200/40 rounded-lg w-9 h-9 dark:bg-gray-600 hover:ring-2 ring-gray-300">
