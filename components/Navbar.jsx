@@ -1,17 +1,19 @@
 import Link from 'next/link';
+import { useSelector } from 'react-redux';
 export default function Navbar() {
+  const products = useSelector((state) => state.cart.cartItems);
   return (
     <nav className="sticky w-10/12 bg-gray-200/50 z-[1] filter-blur backdrop-blur-sm dark:bg-gray-1000/40 my-4 md:top-4 max-w-2xl px-4 py-2  rounded-md mx-auto flex justify-between items-center">
       <div className="flex flex-row gap-1 text-tertiary">
         <Link href="/">
           <div className="transition-all cursor-pointer hover:text-primary">Home</div>
         </Link>
-        <Link href="/">
+        <Link href="/about">
           <div className="transition-all cursor-pointer hover:text-primary">About</div>
         </Link>
       </div>
       <div className="flex flex-row items-center space-x-4">
-        
+        <div>{products.length}</div>
         <button aria-label="Toggle Dark Mode" type="button" className="flex items-center justify-center transition-all bg-gray-200/40 rounded-lg w-9 h-9 dark:bg-gray-600 hover:ring-2 ring-gray-300">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" className="w-5 h-5 text-gray-800 dark:text-gray-200">
             <path

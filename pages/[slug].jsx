@@ -3,7 +3,7 @@ import React from 'react';
 export default function ProductDetails({deets }) {
   console.log(deets)
   return (
-    <div>ProductDetails: {deets.id}</div>
+    <div>ProductDetails: {deets.title}</div>
   )
 }
 export async function getServerSideProps(context) {

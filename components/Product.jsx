@@ -1,7 +1,14 @@
 import { Button } from '@nextui-org/react';
 import Link from 'next/link';
 import { TbShoppingCartPlus } from 'react-icons/tb';
+import { useDispatch } from 'react-redux';
+import { add } from '../redux/cartSlice';
 export default function Product({ e }) {
+  const dispatch = useDispatch();
+
+  const handleAdd = (product) => {
+    dispatch(add(product));
+  };
   return (
     <div key={e.id} className="flex flex-col py-2   mx-auto  ">
       <Link href={`/${e.id}`}>
@@ -12,7 +19,7 @@ export default function Product({ e }) {
         <Button auto bordered>
           ${e.price}
         </Button>
-        <Button shadow auto>
+        <Button shadow auto onClick={() => {handleAdd(e)}}>
           <TbShoppingCartPlus />
         </Button>
       </div>

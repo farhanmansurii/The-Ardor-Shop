@@ -1,14 +1,15 @@
 import { NextUIProvider } from '@nextui-org/react';
-import { SessionProvider } from 'next-auth/react';
+import { Provider } from 'react-redux';
 import Navbar from '../components/Navbar';
+import store from '../redux/store';
 import '../styles/globals.css';
 function MyApp({ Component, pageProps: { session, ...pageProps } }) {
   return (
-    <SessionProvider session={session}>
-      <NextUIProvider>
-        <Navbar /> <Component {...pageProps} />
-      </NextUIProvider>
-    </SessionProvider>
+      <Provider store={store}>
+        <NextUIProvider>
+          <Navbar /> <Component {...pageProps} />
+        </NextUIProvider>
+      </Provider>
   );
 }
 
