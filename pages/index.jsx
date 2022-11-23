@@ -1,7 +1,9 @@
+import CarousalProducts from '../components/CarousalProducts';
 import ProductRow from '../components/ProductRow';
 export default function Home({ data }) {
   return (
     <>
+    <CarousalProducts products={data}/>
       <ProductRow data={data} title={'hi'}/>
     </>
   );
