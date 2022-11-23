@@ -13,7 +13,7 @@ export default function Product({ e }) {
     <div key={e.id} className="flex flex-col py-2   mx-auto  ">
       <Link href={`/${e.id}`}>
         <img src={e.images[0]} alt={e.title} className="  " />
-        <div className=" text-sm lg:text-xl flex p-1   ">
+        <div className=" text-sm lg:text-xl flex p-1  line-clamp-1  ">
         <Text
           css={{ width: '100%',
           color: '$blue900'
