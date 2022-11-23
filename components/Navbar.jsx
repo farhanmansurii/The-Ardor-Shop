@@ -2,9 +2,13 @@ import { Button, Popover, Text } from '@nextui-org/react';
 import Link from 'next/link';
 import { AiOutlineHome } from 'react-icons/ai';
 import { MdClear, MdPersonOutline, MdShoppingCart } from 'react-icons/md';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { remove } from '../redux/cartSlice';
 export default function Navbar() {
   const products = useSelector((state) => state.cart.cartItems);
+  const dispatch = useDispatch();
+  const handleRemove = (cartItem) => {
+    dispatch(remove(cartItem));}
   return (
     <nav className="fixed w-full h-16 bg-gradient-to-tr from-red-600/70 to-yellow-500/70 z-[10] p-3  mx-auto filter-blur backdrop-blur-sm  flex justify-between items-center">
       <div className=" flex justify-between  gap-3 w-11/12 mx-auto">
@@ -36,13 +40,13 @@ export default function Navbar() {
                 <>
                   <div className="p-3">
                     {products.map((e) => (
-                      <div className="border-b p-2 border-red-500 m-2">
+                      <div key={e.div} className="border-b p-2 border-red-500 m-2">
                         <div>{e.title}</div>
                         <div className="flex justify-between">
                           <div>
                             ${e.price} x {e.cartQuantity}
                           </div>
-                          <MdClear className="w-5 h-5 text-white bg-red-500 rounded-full " />
+                          <MdClear onClick={() => handleRemove(e)} className="w-5 h-5 text-white bg-red-500 rounded-full " />
                         </div>
                       </div>
                     ))}

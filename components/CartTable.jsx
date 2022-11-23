@@ -1,9 +1,15 @@
 import { Table } from '@nextui-org/react';
 import { MdClear } from 'react-icons/md';
+import { useDispatch } from 'react-redux';
+import { remove } from '../redux/cartSlice';
+
 export default function CartTable({ products }) {
+  const dispatch = useDispatch();
+  const handleRemove = (cartItem) => {
+    dispatch(remove(cartItem));}
   return (
     <Table compact aria-label="Example table with static content">
-      <Table.Header  >
+      <Table.Header>
         <Table.Column>Product Title</Table.Column>
         <Table.Column>Quantity</Table.Column>
         <Table.Column>Price</Table.Column>
@@ -23,7 +29,7 @@ export default function CartTable({ products }) {
             <Table.Cell>{e.cartQuantity}</Table.Cell>
             <Table.Cell>${e.price}</Table.Cell>
             <Table.Cell>
-              <MdClear className="w-5 h-5 text-white bg-red-500 rounded-full " />
+              <MdClear onClick={() => handleRemove(e)}  className="w-5 h-5 text-white bg-red-500 rounded-full " />
             </Table.Cell>
           </Table.Row>
         ))}
