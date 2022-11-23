@@ -1,10 +1,23 @@
+import { Text } from '@nextui-org/react';
 import CarousalProducts from '../components/CarousalProducts';
 import ProductRow from '../components/ProductRow';
 export default function Home({ data }) {
   return (
     <>
-    <CarousalProducts products={data}/>
-      <ProductRow data={data} title={'All Products'}/>
+      <div className="mx-auto w-11/12">
+        <Text
+          h1
+          size={50}
+          css={{
+            textGradient: '45deg, $yellow600 -20%, $red600 100%',
+          }}
+          weight="bold"
+        >
+          Home.
+        </Text>
+      </div>
+      <CarousalProducts products={data} />
+      <ProductRow data={data} title={'All Products'} />
     </>
   );
 }

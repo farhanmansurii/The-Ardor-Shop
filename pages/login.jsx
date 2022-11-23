@@ -1,4 +1,4 @@
-import { Input, Spacer, Text, useInput } from '@nextui-org/react';
+import { Button, Input, Spacer, Text, useInput } from '@nextui-org/react';
 import React from 'react';
 export default function login() {
   const validateEmail = (value) => {
@@ -20,7 +20,6 @@ export default function login() {
   return (
     <div className="w-10/12  mx-auto">
       <div className="mx-auto w-fit  py-5">
-       
         <Text
           h1
           size={50}
@@ -29,7 +28,7 @@ export default function login() {
           }}
           weight="bold"
         >
-        Login
+          Login
         </Text>
         <Input
           width="300px"
@@ -43,10 +42,13 @@ export default function login() {
           helperText={helper.text}
           onClearClick={reset}
           placeholder="Enter your e-mail address "
-           
         />
         <Spacer y={1.0} />
         <Input.Password width="300px" clearable helperText="Insecure password" type="password" label="Password" placeholder="Enter your password " />
+        <Spacer y={2.0} />
+        <Button   css={{
+            
+            linearGradient: '45deg, $yellow600 -20%, $red600 100%'}} className='mx-auto '>Login</Button>
       </div>
     </div>
   );

@@ -7,7 +7,10 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }) {
   return (
       <Provider store={store}>
         <NextUIProvider>
-          <Navbar /> <Component {...pageProps} />
+          <Navbar />
+          <div className='pt-[4rem]'>
+             <Component {...pageProps} />
+            </div>
         </NextUIProvider>
       </Provider>
   );

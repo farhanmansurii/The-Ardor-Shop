@@ -1,30 +1,38 @@
-import { Button } from '@nextui-org/react';
+import { Button, Text } from '@nextui-org/react';
 import Carousel from 'nuka-carousel/lib/carousel';
 import { GrFormNext, GrFormPrevious } from 'react-icons/gr';
 export default function CarousalProducts({ products }) {
   return (
     <>
       <>
-        <div className="flex w-11/12 lg:w-10/12 mx-auto p-2 font-semibold mt-4 mb-3 text-2xl uppercase  ">
-        
-        </div>
-        <div className="w-10/12 mx-auto">
+        <div className="w-11/12 mx-auto">
           <Carousel
-           wrapAround={true}
+            wrapAround={true}
             defaultControlsConfig={{
-            
-              
               pagingDotsStyle: {
-                fill: 'none'
-              }
+                fill: 'none',
+              },
             }}
-            renderCenterLeftControls={({ previousSlide }) => <Button auto color="gradient" rounded light onClick={previousSlide}><GrFormPrevious fill="current-color"/></Button>}
-            renderCenterRightControls={({ nextSlide }) => <Button auto color="gradient" rounded light onClick={nextSlide}><GrFormNext/></Button>}
+            renderCenterLeftControls={({ previousSlide }) => (
+              <Button auto color="gradient" rounded light onClick={previousSlide}>
+                <GrFormPrevious fill="current-color" />
+              </Button>
+            )}
+            renderCenterRightControls={({ nextSlide }) => (
+              <Button auto color="gradient" rounded light onClick={nextSlide}>
+                <GrFormNext />
+              </Button>
+            )}
           >
             {products.map((e) => (
               <div className="carousel-item h-[300px] flex lg:h-[350px] bg-cover bg-center " style={{ backgroundImage: `url(${e.images[0]})` }}>
-                <div className="flex flex-col-reverse h-full w-full bg-gradient-to-t from-black to-slate-500/20  font-semibold bottom-0">
-                  <div className=" top-0 flex pb-5 px-4 font-normal font-inter text-white text-2xl lg:text-4xl uppercase  ">{e.title}</div>
+                <div className="flex flex-col-reverse h-full w-full bg-gradient-to-t from-yellow-500/70 to-red-500/30  font-semibold bottom-0">
+                  <div className=" top-0 flex pb-5 px-4   ">
+                    {' '}
+                    <Text h1 size={30}  color='$white'  weight='medium'>
+                      {e.title}
+                    </Text>
+                  </div>
                 </div>
               </div>
             ))}
