@@ -1,5 +1,7 @@
+import { Button } from '@nextui-org/react';
 import Carousel from 'nuka-carousel/lib/carousel';
 import { AiOutlineArrowRight } from 'react-icons/ai';
+import { GrFormNext, GrFormPrevious } from 'react-icons/gr';
 export default function CarousalProducts({ products }) {
   return (
     <>
@@ -9,12 +11,16 @@ export default function CarousalProducts({ products }) {
         </div>
         <div className="w-10/12 mx-auto">
           <Carousel
-            adaptiveHeight="true"
+           wrapAround={true}
             defaultControlsConfig={{
-              pagingDotsIndices : false
+            
+              
+              pagingDotsStyle: {
+                fill: 'none'
+              }
             }}
-            renderCenterLeftControls={({ previousSlide }) => <button onClick={previousSlide}>Previous</button>}
-            renderCenterRightControls={({ nextSlide }) => <button onClick={nextSlide}>Next</button>}
+            renderCenterLeftControls={({ previousSlide }) => <Button auto color="gradient" rounded light onClick={previousSlide}><GrFormPrevious fill="current-color"/></Button>}
+            renderCenterRightControls={({ nextSlide }) => <Button auto color="gradient" rounded light onClick={nextSlide}><GrFormNext/></Button>}
           >
             {products.map((e) => (
               <div className="carousel-item h-[300px] flex lg:h-[350px] bg-cover bg-center " style={{ backgroundImage: `url(${e.images[0]})` }}>
