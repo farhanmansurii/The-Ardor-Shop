@@ -13,13 +13,13 @@ export default function CarousalProducts({ products }) {
               },
             }}
             renderCenterLeftControls={({ previousSlide }) => (
-              <button onClick={() => previousSlide()} className="btn btn-circle  text-white bg-base-100/50 border-2 border-primary hover:bg-yellow-500/50 hover:text-black duration-300  m-2">
+              <button onClick={() => previousSlide()} className="btn btn-circle btn-ghost  text-white   hover:bg-transparent hover:text-black duration-300  m-2">
                 {' '}
              <BiLeftArrow className='w-5 h-5 mx-auto'/>
               </button>
             )}
             renderCenterRightControls={({ nextSlide }) => (
-              <button onClick={() => nextSlide()} className="btn btn-circle  text-white bg-base-100/50 border-2 border-primary    hover:bg-yellow-500/50 hover:text-black duration-300 m-2">
+              <button onClick={() => nextSlide()} className="btn btn-circle  btn-ghost text-white     hover:bg-transparent hover:text-black duration-300 m-2">
                 <BiRightArrow className='w-5 h-5 mx-auto'/>
               </button>
             )}
