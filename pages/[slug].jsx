@@ -30,8 +30,8 @@ export default function ProductDetails({ deets }) {
             <div className="border-2 border-primary w-fit px-3  hover:text-yellow-500 hover:border-yellow-500 hover:scale-105 duration-200 py-1">XL</div>
           </div>
           <div className="my-5 flex justify-between w-10/12  gap-2 mx-auto">
-        <div  className=" my-auto mt-5 text-yellow-500  w-fit py-2 uppercase  rounded-none font-semibold hover:scale-105 duration-200"> ₹{deets.price * 6}</div>
-            <button className=" bg-yellow-500 my-auto mt-5 text-black  w-fit py-2 uppercase px-10 rounded-none hover:bg-black hover:border-2 hover:border-yellow-500 duration-200 hover:text-yellow-500 font-semibold" onClick={() => handleAdd(deets)}>
+        <div  className=" btn rounded-none text-yellow-500 border-0 btn-ghost hover:bg-black font-normal font-xl "> ₹{deets.price * 6}</div>
+            <button  className=" btn rounded-none text-base-100 bg-yellow-500 border-0 font-semibold font-xl hover:text-yellow-500 " onClick={() => handleAdd(deets)}>
               Add to Cart
             </button>
           </div>
