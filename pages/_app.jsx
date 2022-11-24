@@ -1,19 +1,15 @@
-import { NextUIProvider } from '@nextui-org/react';
 import { Provider } from 'react-redux';
 import Navbar from '../components/Navbar';
 import store from '../redux/store';
 import '../styles/globals.css';
-function MyApp({ Component, pageProps: { session, ...pageProps } }) {
+export default function MyApp({ Component, pageProps: { session, ...pageProps } }) {
   return (
-      <Provider store={store}>
-        <NextUIProvider>
+    <Provider store={store}>
           <Navbar />
-          <div className='pt-[4rem]'>
-             <Component {...pageProps} />
-            </div>
-        </NextUIProvider>
-      </Provider>
+          <div className="pt-[4rem] font-whyte">
+            <Component {...pageProps} />
+        </div>
+    </Provider>
   );
 }
 
-export default MyApp;

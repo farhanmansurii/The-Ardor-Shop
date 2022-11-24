@@ -1,11 +1,9 @@
-import { Button, Text } from '@nextui-org/react';
 import Carousel from 'nuka-carousel/lib/carousel';
-import { GrFormNext, GrFormPrevious } from 'react-icons/gr';
 export default function CarousalProducts({ products }) {
   return (
     <>
       <>
-        <div className="w-11/12 mx-auto">
+        <div className="w-full  mx-auto ">
           <Carousel
             wrapAround={true}
             defaultControlsConfig={{
@@ -14,25 +12,21 @@ export default function CarousalProducts({ products }) {
               },
             }}
             renderCenterLeftControls={({ previousSlide }) => (
-              <Button auto color="gradient" rounded light onClick={previousSlide}>
-                <GrFormPrevious fill="current-color" />
-              </Button>
+              <div onClick={() => previousSlide()} className="btn btn-circle font-xs text-white bg-base-100/50 border-2 border-primary hover:bg-yellow-500/50 hover:text-black duration-300  m-2">
+                {' '}
+                Prev{' '}
+              </div>
             )}
             renderCenterRightControls={({ nextSlide }) => (
-              <Button auto color="gradient" rounded light onClick={nextSlide}>
-                <GrFormNext />
-              </Button>
+              <div onClick={() => nextSlide()} className="btn btn-circle  font-xs text-white bg-base-100/50 border-2 border-primary    hover:bg-yellow-500/50 hover:text-black duration-300 m-2">
+                next
+              </div>
             )}
           >
             {products.map((e) => (
-              <div className="carousel-item h-[300px] flex lg:h-[350px] bg-cover bg-center " style={{ backgroundImage: `url(${e.images[0]})` }}>
-                <div className="flex flex-col-reverse h-full w-full bg-gradient-to-t from-yellow-500/70 to-red-500/30  font-semibold bottom-0">
-                  <div className=" top-0 flex pb-5 px-4   ">
-                    {' '}
-                    <Text h1 size={30}  color='$white'  weight='medium'>
-                      {e.title}
-                    </Text>
-                  </div>
+              <div key={e.id} className="carousel-item ease-in-out duration-300 h-[250px] flex lg:h-[350px] bg-cover bg-center " style={{ backgroundImage: `url(${e.images[0]})` }}>
+                <div className="flex flex-col-reverse h-full w-full bg-gradient-to-t from-black/60 to-black/20  font-semibold bottom-0">
+                  <div className=" top-0 flex pb-5 px-4 uppercase text-primary text-2xl lg:text-5xl "> {e.title}</div>
                 </div>
               </div>
             ))}

@@ -1,4 +1,3 @@
-import { Button, Text } from '@nextui-org/react';
 import Image from 'next/image';
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
@@ -11,60 +10,38 @@ export default function ProductDetails({ deets }) {
   };
   const [selectedImage, setSelectedImage] = useState(deets.images[0]);
   return (
-    <div className="flex flex-col lg:flex-row w-10/12 mx-auto mb-10 gap-4 mt-4">
-      <div>
+    <div className="flex flex-col lg:flex-row w-[96%] mx-auto  mt-4 font-whyte">
+      <div className="lg:w-8/12 mb-4">
         <Image src={selectedImage} alt={deets.title} width={640} height={480} className="mx-auto" />
 
-        <div className="flex-row  lg:w-9/12 my-2 flex mx-auto">
+        <div className="flex-row w-fit gap-1  mt-2  flex mx-auto">
           {deets.images.map((e, i) => (
             <Image key={i} onClick={() => setSelectedImage(e)} src={e} alt={deets.title} width={100} height={80} className="mx-auto" />
           ))}
         </div>
       </div>
-      <div className="mx-auto w-10/12 my-auto">
-        <Text
-          h1
-          size={40}
-          css={{
-            textGradient: '45deg, $yellow600 -20%, $red600 100%',
-          }}
-          weight="bold"
-        >
-          {deets.title}
-        </Text>
+      <div className="mx-auto  gap-4 h-11/12 py-4">
+        <div className="text-3xl lg:text-5xl w-10/12 mx-auto uppercase">{deets.title}</div>
         <div>
-          <Text className="mx-auto" weight='semibold'>{deets.description} </Text>
-        </div>
-        <div className="my-3 flex gap-2 mx-auto">
-          <div className="my-auto mx-4 text-xl font-semibold text-yellow-500"> ${deets.price}</div>
-          <Button
-            css={{
-              linearGradient: '45deg, $yellow600 -20%, $red600 100%',
-              '&:after': {
-                content: '""',
-                position: 'absolute',
-                width: '100%',
-                height: '100%',
-                opacity: 1,
-                borderRadius: '$pill',
-                transition: 'all 0.4s ease',
-              },
-              '&:hover': {
-                transform: 'translateY(-5px)',
-                '&:after': {
-                  transform: 'scaleX(1.5) scaleY(1.6)',
-                  opacity: 0,
-                },
-              },
-              '&:active': {
-                transform: 'translateY(-2px)',
-              },
-            }}
-            auto
-            onClick={() => handleAdd(deets)}
-          >
-            Add to Cart
-          </Button>
+          <div className="flex gap-2 w-10/12 mx-auto my-3 font-semibold">
+            <div className="border-2 border-primary w-fit px-3 hover:text-yellow-500 hover:border-yellow-500 py-1">S</div>
+            <div className="border-2 border-primary w-fit px-3 hover:text-yellow-500 hover:border-yellow-500 py-1">M</div>
+            <div className="border-2 border-primary w-fit px-3  hover:text-yellow-500 hover:border-yellow-500 py-1">L</div>
+            <div className="border-2 border-primary w-fit px-3  hover:text-yellow-500 hover:border-yellow-500 py-1">XL</div>
+          </div>
+          <div className="my-5 flex justify-between w-10/12  gap-2 mx-auto">
+            <div className="  text-lg lg:text-2xl my-auto  text-yellow-500"> ₹{deets.price * 6}</div>
+            <button
+              className="btn rounded-none hover:bg-base-100 border-0 hover:border-2 duration-300 ease-in-out hover:border-yellow-500 hover:text-yellow-500 bg-yellow-500 text-base-100 "
+              onClick={() => handleAdd(deets)}
+            >
+              Add to Cart
+            </button>
+          </div>
+          <div className="mx-auto text-md lg:text-lg w-10/12   my-2 ">
+            {' '}
+            <span className="text-yellow-500 underline underline-offset-2"> Product Description -</span> {deets.description}{' '}
+          </div>
         </div>
       </div>
     </div>

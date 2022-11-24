@@ -1,55 +1,24 @@
-import { Button, Input, Spacer, Text, useInput } from '@nextui-org/react';
 import React from 'react';
+import { FiArrowDownRight } from 'react-icons/fi';
 export default function login() {
-  const validateEmail = (value) => {
-    return value.match(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,4}$/i);
-  };
-  const { value, reset, bindings } = useInput('');
-  const helper = React.useMemo(() => {
-    if (!value)
-      return {
-        text: '',
-        color: '',
-      };
-    const isValid = validateEmail(value);
-    return {
-      text: isValid ? 'Correct email' : 'Enter a valid email',
-      color: isValid ? 'success' : 'error',
-    };
-  }, [value]);
   return (
-    <div className="w-10/12  mx-auto">
-      <div className="mx-auto w-fit  py-5">
-        <Text
-          h1
-          size={50}
-          css={{
-            textGradient: '45deg, $yellow600 -20%, $red600 100%',
-          }}
-          weight="bold"
-        >
-          Login
-        </Text>
-        <Input
-          width="300px"
-          clearable
-          shadow={true}
-          type="email"
-          label="Email"
-          status={helper.color}
-          color={helper.color}
-          helperColor={helper.color}
-          helperText={helper.text}
-          onClearClick={reset}
-          placeholder="Enter your e-mail address "
-        />
-        <Spacer y={1.0} />
-        <Input.Password width="300px" clearable helperText="Insecure password" type="password" label="Password" placeholder="Enter your password " />
-        <Spacer y={2.0} />
-        <Button   css={{
-            
-            linearGradient: '45deg, $yellow600 -20%, $red600 100%'}} className='mx-auto '>Login</Button>
+    <>
+      <div className="font-whyte font-bold text-4xl mx-auto w-11/12 uppercase py-2  my-6 flex ">Login<FiArrowDownRight color='yellow' /></div>
+      <div className="form-control rounded-none w-11/12 mx-auto">
+        <label className="label ">
+          <span className="label-text">What is your e-mail ?</span>
+        </label>
+        <input type="email" placeholder="elonmusk@kanye.com" className="input  rounded-none border-b-3 border-white input-ghost  w-full max-w-xs" />
+        <label className="label ">
+          <span className="label-text mt-4">What is your password ?</span>
+        </label>
+        <input type="password" placeholder="password" className="input  rounded-none border-b-3 border-white input-ghost  w-full max-w-xs" />
+        <label className="label cursor-pointer w-fit gap-6 mt-2 ">
+          <span className="label-text">Remember me</span>
+          <input type="checkbox"  className="checkbox" />
+        </label>{' '}
+        <button className="btn bg-yellow-500 mt-5 text-black font-bold w-fit px-10 rounded-none">Login.</button>
       </div>
-    </div>
+    </>
   );
 }

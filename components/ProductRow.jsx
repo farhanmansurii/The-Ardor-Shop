@@ -1,21 +1,11 @@
-import { Text } from '@nextui-org/react';
+import { FiArrowDownRight } from 'react-icons/fi';
 import Product from '../components/Product';
-export default function ProductRow({data ,title}) {
+export default function ProductRow({ data, title }) {
   return (
     <>
-      <div className="flex w-11/12    mx-auto pt-6 font-semibold   text-2xl uppercase   ">
-      <Text
-         h1
-         size={50}
-         css={{
-           textGradient: '45deg, $yellow600 -20%, $red600 100%',
-         }}
-         weight="bold"
-         >
-        {title}.
-        </Text>  </div>
+      <div className="font-whyte font-bold text-4xl uppercase py-2 w-11/12 mx-auto mt-10 my-4 flex ">{title}<FiArrowDownRight color='yellow' /></div>
 
-      <div className="  mx-auto gap-3 grid w-11/12  grid-cols-2 lg:grid-cols-3">
+      <div className="  mx-auto gap-1 grid w-[98%]   grid-cols-2 lg:grid-cols-4">
         {data.map((e) => (
           <Product e={e} key={e.id} />
         ))}

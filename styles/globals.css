@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@font-face {
+  font-family: 'Whyte Inktrap';
+  src: local('Whyte Inktrap Light'), local('Whyte-Inktrap-Light'), url('./fonts/WhyteInktrap-Light.woff2') format('woff2'), url('./fonts/WhyteInktrap-Light.woff') format('woff'),
+    url('./fonts/WhyteInktrap-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
