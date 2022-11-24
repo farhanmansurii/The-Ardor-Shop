@@ -8,7 +8,7 @@ export default function Navbar() {
     dispatch(remove(cartItem));
   };
   return (
-    <nav className="fixed w-full h-16 border-b-2  text-lg border-accent bg-black/60  backdrop-blur-[5px] uppercase z-[10] p-3  mx-auto filter-blur backdrop-blur-xs  flex justify-between items-center">
+    <nav className="fixed w-full h-16 border-b-2  text-lg border-accent bg-base-100/60  backdrop-blur-[5px] uppercase z-[10] p-3  mx-auto filter-blur backdrop-blur-xs  flex justify-between items-center">
       <div className=" flex justify-between   gap-3 w-11/12 mx-auto">
         <div className="my-auto">
           <Link href={'/'}>
@@ -21,11 +21,13 @@ export default function Navbar() {
             Home
           </Link>
           <Link href={'/login'} className="my-auto">
-            Login
+            <span className="text-accent">Login</span>
           </Link>
           {products.length > 0 ? (
             <Link href={'/cart'} className="my-auto">
-              <div className="border-[2px] border-white py-2 px-3">Cart : {products.length}</div>
+              <div className=" ">
+                Cart : <span className="text-accent">{products.length}</span>
+              </div>
             </Link>
           ) : (
             <Link href={'/cart'} className="my-auto">
