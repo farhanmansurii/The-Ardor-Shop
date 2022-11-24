@@ -36,7 +36,7 @@ export default function cart() {
       ) : (
         <div className="font-whyte  font-bold text-2xl mx-auto uppercase py-2 align-center ">No items in cart</div>
       )}
-      {products.length > 0 && <div className="my-3 place-self-end btn rounded-none btn-md bg-yellow-500 text-black font-bold">CHECKOUT</div>}
+      {products.length > 0 &&  <button className=" bg-yellow-500 mt-5 text-black  w-fit py-2 uppercase px-10 rounded-none hover:bg-black hover:text-yellow-500 font-semibold">checkout</button>}
     </div>
   );
 }

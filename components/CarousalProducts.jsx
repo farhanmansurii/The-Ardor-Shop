@@ -1,4 +1,5 @@
 import Carousel from 'nuka-carousel/lib/carousel';
+import { BiLeftArrow, BiRightArrow } from 'react-icons/bi';
 export default function CarousalProducts({ products }) {
   return (
     <>
@@ -12,14 +13,14 @@ export default function CarousalProducts({ products }) {
               },
             }}
             renderCenterLeftControls={({ previousSlide }) => (
-              <button onClick={() => previousSlide()} className="btn btn-circle font-[6px] text-white bg-base-100/50 border-2 border-primary hover:bg-yellow-500/50 hover:text-black duration-300  m-2">
+              <button onClick={() => previousSlide()} className="btn btn-circle  text-white bg-base-100/50 border-2 border-primary hover:bg-yellow-500/50 hover:text-black duration-300  m-2">
                 {' '}
-                Prev{' '}
+             <BiLeftArrow className='w-5 h-5 mx-auto'/>
               </button>
             )}
             renderCenterRightControls={({ nextSlide }) => (
-              <button onClick={() => nextSlide()} className="btn btn-circle font-[6px] text-white bg-base-100/50 border-2 border-primary    hover:bg-yellow-500/50 hover:text-black duration-300 m-2">
-                next
+              <button onClick={() => nextSlide()} className="btn btn-circle  text-white bg-base-100/50 border-2 border-primary    hover:bg-yellow-500/50 hover:text-black duration-300 m-2">
+                <BiRightArrow className='w-5 h-5 mx-auto'/>
               </button>
             )}
           >
