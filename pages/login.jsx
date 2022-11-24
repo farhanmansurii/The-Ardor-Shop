@@ -8,11 +8,11 @@ export default function login() {
         <label className="label ">
           <span className="label-text">What is your e-mail ?</span>
         </label>
-        <input type="email" placeholder="elonmusk@kanye.com" className="input  placeholder:text-sm  rounded-none  border-white input-ghost  w-full max-w-xs" />
+        <input type="email" placeholder="elonmusk@kanye.com" className="input  input-md placeholder:text-xs  rounded-none  border-white input-ghost  w-full max-w-xs" />
         <label className="label ">
           <span className="label-text mt-4">What is your password ?</span>
         </label>
-        <input type="password" placeholder="password"  className="input placeholder:text-sm  rounded-none  border-white input-ghost  w-full max-w-xs" />
+        <input type="password" placeholder="password"  className="input placeholder:text-xs input-md   rounded-none  border-white input-ghost  w-full max-w-xs" />
         <label className="label cursor-pointer w-fit gap-6 mt-2 ">
           <span className="label-text">Remember me</span>
           <input type="checkbox"  className="checkbox" />
