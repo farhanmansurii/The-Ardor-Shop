@@ -12,15 +12,15 @@ export default function CarousalProducts({ products }) {
               },
             }}
             renderCenterLeftControls={({ previousSlide }) => (
-              <div onClick={() => previousSlide()} className="btn btn-circle font-xs text-white bg-base-100/50 border-2 border-primary hover:bg-yellow-500/50 hover:text-black duration-300  m-2">
+              <button onClick={() => previousSlide()} className="btn btn-circle font-[6px] text-white bg-base-100/50 border-2 border-primary hover:bg-yellow-500/50 hover:text-black duration-300  m-2">
                 {' '}
                 Prev{' '}
-              </div>
+              </button>
             )}
             renderCenterRightControls={({ nextSlide }) => (
-              <div onClick={() => nextSlide()} className="btn btn-circle  font-xs text-white bg-base-100/50 border-2 border-primary    hover:bg-yellow-500/50 hover:text-black duration-300 m-2">
+              <button onClick={() => nextSlide()} className="btn btn-circle font-[6px] text-white bg-base-100/50 border-2 border-primary    hover:bg-yellow-500/50 hover:text-black duration-300 m-2">
                 next
-              </div>
+              </button>
             )}
           >
             {products.map((e) => (
