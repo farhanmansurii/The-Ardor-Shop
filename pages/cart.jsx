@@ -12,13 +12,16 @@ export default function cart() {
   };
   return (
     <div className="w-11/12 mx-auto">
-      <div className="font-whyte  font-bold text-4xl uppercase py-2  my-6 flex ">Cart<FiArrowDownRight color='yellow' /></div>
+      <div className="font-whyte  font-bold text-4xl uppercase py-2  my-6 flex ">
+        Cart
+        <FiArrowDownRight color="yellow" />
+      </div>
 
       {products.length > 0 ? (
         products.map((e) => (
-          <div key={e.id} className="flex my-3 flex-row gap-3 justify-between">
+          <div key={e.id} className="flex my-3 flex-row gap-3 justify-between pb-4 border-b-[1px] border-yellow-500">
             <div className="flex gap-4 w-full">
-              <Image width={80} height={60} src={e.images[0]}  alt={e.title}/>
+              <Image width={80} height={60} src={e.images[0]} alt={e.title} />
               <div className="text-xl uppercase text-white my-auto">{e.title}</div>
             </div>
             <div className="flex  w-fit gap-3 ">
