@@ -17,9 +17,7 @@ export default function Navbar() {
           </Link>
         </div>
         <div className="flex gap-4 place-self-end my-auto ">
-          <Link href={'/'} className="my-auto">
-            Home
-          </Link>
+          
           <Link href={'/login'} className="my-auto">
             <span className="text-accent">Login</span>
           </Link>
