@@ -12,6 +12,7 @@
     "daisyui": "^2.42.0",
     "next": "latest",
     "next-auth": "^4.17.0",
+    "nextjs-progressbar": "^0.0.16",
     "nuka-carousel": "^5.4.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",

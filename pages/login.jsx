@@ -17,7 +17,7 @@ export default function login() {
           <span className="label-text">Remember me</span>
           <input type="checkbox"  className="checkbox" />
         </label>{' '}
-        <button className=" bg-yellow-500 mt-5 text-black  w-fit py-2 uppercase px-10 rounded-none hover:bg-black hover:text-yellow-500 font-semibold">Login.</button>
+        <button className=" bg-accent mt-5 text-black  w-fit py-2 uppercase px-10 rounded-none hover:bg-black hover:text-accent font-semibold">Login.</button>
       </div>
     </>
   );

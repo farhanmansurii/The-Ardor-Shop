@@ -19,13 +19,13 @@ export default function cart() {
 
       {products.length > 0 ? (
         products.map((e) => (
-          <div key={e.id} className="flex my-3 flex-row gap-3 justify-between pb-4 border-b-[1px] border-yellow-500">
+          <div key={e.id} className="flex my-3 flex-row gap-3 justify-between pb-4 border-b-[1px] border-accent">
             <div className="flex gap-4 w-full">
               <Image width={80} height={60} src={e.images[0]} alt={e.title} />
               <div className="text-xl uppercase text-white my-auto">{e.title}</div>
             </div>
             <div className="flex  w-fit gap-3 ">
-              <div className="text-xl text-yellow-500 font-bold my-auto">₹{e.price * 6}</div>
+              <div className="text-xl text-accent font-bold my-auto">₹{e.price * 6}</div>
               <div className="text-xl text-white my-auto">X{e.cartQuantity}</div>
             </div>
             <button onClick={() => handleRemove(e)} className="btn btn-circle p-2 text-black bg-rose-500 my-auto btn-sm w-fit ">
@@ -36,7 +36,12 @@ export default function cart() {
       ) : (
         <div className="font-whyte  font-bold text-2xl mx-auto uppercase py-2 align-center ">No items in cart</div>
       )}
-      {products.length > 0 &&  <button className=" bg-yellow-500 mt-5 text-black  w-fit py-2 uppercase px-10 rounded-none hover:bg-black hover:text-yellow-500 font-semibold">checkout</button>}
+      {products.length > 0 && (
+        <>
+          <div className="font-whyte font-bold text-2xl uppercase  text-accent  mt-6 mb-3 flex "> Subtotal :  ₹{products.reduce((sum, i) => (sum += i.cartQuantity * i.price * 6), 0)}.00</div>
+          <button className=" bg-accent  text-black  w-fit py-2 uppercase px-10 rounded-none hover:bg-black hover:text-accent font-semibold">checkout</button>
+        </>
+      )}
     </div>
   );
 }

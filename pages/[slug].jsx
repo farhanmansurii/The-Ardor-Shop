@@ -24,20 +24,20 @@ export default function ProductDetails({ deets }) {
         <div className="text-3xl lg:text-5xl w-10/12 mx-auto uppercase">{deets.title}</div>
         <div>
           <div className="flex gap-2 w-10/12 mx-auto my-3 font-semibold">
-            <div className="border-2 border-primary w-fit px-3 hover:text-yellow-500 hover:border-yellow-500  hover:scale-105 duration-200 py-1">S</div>
-            <div className="border-2 border-primary w-fit px-3 hover:text-yellow-500 hover:border-yellow-500 hover:scale-105 duration-200 py-1">M</div>
-            <div className="border-2 border-primary w-fit px-3  hover:text-yellow-500 hover:border-yellow-500 hover:scale-105 duration-200 py-1">L</div>
-            <div className="border-2 border-primary w-fit px-3  hover:text-yellow-500 hover:border-yellow-500 hover:scale-105 duration-200 py-1">XL</div>
+            <div className="border-2 border-primary w-fit px-3 hover:text-accent hover:border-accent  hover:scale-105 duration-200 py-1">S</div>
+            <div className="border-2 border-primary w-fit px-3 hover:text-accent hover:border-accent hover:scale-105 duration-200 py-1">M</div>
+            <div className="border-2 border-primary w-fit px-3  hover:text-accent hover:border-accent hover:scale-105 duration-200 py-1">L</div>
+            <div className="border-2 border-primary w-fit px-3  hover:text-accent hover:border-accent hover:scale-105 duration-200 py-1">XL</div>
           </div>
-          <div className="my-5 flex justify-between w-10/12   mx-auto">
-            <div className=" btn rounded-none text-yellow-500 border-0 btn-ghost hover:bg-black font-normal font-xl "> ₹{deets.price * 6}</div>
-            <button className=" btn rounded-none text-base-100 bg-yellow-500 border-0 font-semibold font-xl hover:text-yellow-500 " onClick={() => handleAdd(deets)}>
+          <div className="my-5 flex  w-10/12  font-bold font-xl    mx-auto">
+            <div className=" btn rounded-none text-accent border-0 btn-ghost my-auto  hover:bg-black  "> ₹{deets.price * 6}</div>
+            <button className=" btn rounded-none text-base-100 bg-accent border-0  hover:text-accent " onClick={() => handleAdd(deets)}>
               Add to Cart
             </button>
           </div>
           <div className="mx-auto text-md lg:text-lg w-10/12   my-2 ">
           
-            <span className="text-yellow-500"> Product Description </span> - {deets.description}{' '}
+            <span className="text-accent"> Product Description </span> - {deets.description}{' '}
           </div>
         </div>
       </div>

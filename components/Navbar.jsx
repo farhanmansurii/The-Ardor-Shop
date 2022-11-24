@@ -8,10 +8,13 @@ export default function Navbar() {
     dispatch(remove(cartItem));
   };
   return (
-    <nav className="fixed w-full h-16 border-b-2  text-lg border-white bg-black/60  backdrop-blur-[5px] uppercase z-[10] p-3  mx-auto filter-blur backdrop-blur-xs  flex justify-between items-center">
+    <nav className="fixed w-full h-16 border-b-2  text-lg border-accent bg-black/60  backdrop-blur-[5px] uppercase z-[10] p-3  mx-auto filter-blur backdrop-blur-xs  flex justify-between items-center">
       <div className=" flex justify-between   gap-3 w-11/12 mx-auto">
         <div className="my-auto">
-          <Link href={'/'}>E500</Link>
+          <Link href={'/'}>
+            <span className="text-accent">Ardor</span>
+            store
+          </Link>
         </div>
         <div className="flex gap-4 place-self-end my-auto ">
           <Link href={'/'} className="my-auto">
