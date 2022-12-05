@@ -31,7 +31,7 @@ export default function Navbar() {
         </div>
       </div>
       <div className="navbar-center">
-        <a className="btn btn-ghost normal-case text-xl">ArdorStore</a>
+        <Link href={'/'} className="btn btn-ghost normal-case text-xl">ArdorStore</Link>
       </div>
       <div className="navbar-end">
         <button className="btn btn-ghost btn-circle">
