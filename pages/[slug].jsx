@@ -10,7 +10,7 @@ export default function ProductDetails({ deets }) {
   };
   const [selectedImage, setSelectedImage] = useState(deets.images[0]);
   return (
-    <div className="flex flex-col lg:flex-row w-[96%] mx-auto  mt-2 font-whyte">
+    <div className="flex flex-col lg:flex-row w-[96%] mx-auto  mt-2 font-ibm">
       <div className="lg:w-8/12 mb-4">
         <Image src={selectedImage} alt={deets.title} width={640} height={480} className="mx-auto" />
 
@@ -21,23 +21,23 @@ export default function ProductDetails({ deets }) {
         </div>
       </div>
       <div className="mx-auto  gap-4 h-11/12 my-auto py-4">
-        <div className="text-3xl lg:text-5xl w-10/12 mx-auto uppercase">{deets.title}</div>
+        <div className="text-xl lg:text-3xl w-10/12 mx-auto ">{deets.title}</div>
         <div>
-          <div className="flex gap-2 w-10/12 mx-auto my-3 font-semibold">
-            <div className="border-2 border-primary w-fit px-3 hover:text-accent hover:border-accent  hover:scale-105 duration-200 py-1">S</div>
-            <div className="border-2 border-primary w-fit px-3 hover:text-accent hover:border-accent hover:scale-105 duration-200 py-1">M</div>
-            <div className="border-2 border-primary w-fit px-3  hover:text-accent hover:border-accent hover:scale-105 duration-200 py-1">L</div>
-            <div className="border-2 border-primary w-fit px-3  hover:text-accent hover:border-accent hover:scale-105 duration-200 py-1">XL</div>
+          <div className="flex gap-2 w-10/12 mx-auto my-3 ">
+            <div className="border-2 border-primary w-fit px-3  hover:scale-105 duration-200 py-1">S</div>
+            <div className="border-2 border-primary w-fit px-3 hover:scale-105 duration-200 py-1">M</div>
+            <div className="border-2 border-primary w-fit px-3  hover:scale-105 duration-200 py-1">L</div>
+            <div className="border-2 border-primary w-fit px-3  hover:scale-105 duration-200 py-1">XL</div>
           </div>
           <div className="my-5 flex  w-10/12  font-bold font-xl    mx-auto">
-            <div className=" btn rounded-none text-accent border-0 btn-ghost my-auto  hover:bg-base-100  "> ₹{deets.price * 6}</div>
-            <button className=" btn rounded-none text-base-100 bg-accent   hover:text-accent hover:border-3 hover:border-accent hover:bg-base-100 " onClick={() => handleAdd(deets)}>
+            <div className=" btn rounded-none bg-base-100 border-primary text-primary  "> ₹{deets.price * 6}</div>
+            <button className=" btn rounded-none  " onClick={() => handleAdd(deets)}>
               Add to Cart
             </button>
           </div>
           <div className="mx-auto text-md lg:text-lg w-10/12   my-2 ">
           
-            <span className="text-accent"> Product Description </span> - {deets.description}{' '}
+             Product Description - {deets.description}{' '}
           </div>
         </div>
       </div>

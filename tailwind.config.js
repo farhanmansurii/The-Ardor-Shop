@@ -5,15 +5,15 @@ module.exports = {
     themes: [
       {
         mytheme: {
-          primary: '#F2F2F2',
+          primary: '#111111',
 
-          secondary: '#606470',
+          secondary: '#c6b993',
 
-          accent: '#FDFF00',
+          accent: '#F2F2F2',
 
           neutral: '#111111',
 
-          'base-100': '#181818',
+          'base-100': '#F2F2F2',
 
           info: '#69AED3',
 
@@ -30,6 +30,7 @@ module.exports = {
     extend: {
       fontFamily: {
         whyte: ['Whyte Inktrap'],
+        ibm:['IBM']
       },
     },
   },

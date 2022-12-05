@@ -3,7 +3,7 @@ import { FiArrowDownRight } from 'react-icons/fi';
 export default function login() {
   return (
     <>
-      <div className="font-whyte font-bold text-4xl mx-auto w-11/12 uppercase py-2  my-6 flex ">Login<FiArrowDownRight color='yellow' /></div>
+      <div className="font-whyte font-bold text-2xl mx-auto w-11/12 uppercase py-2  my-6 flex ">Login<FiArrowDownRight color='white' /></div>
       <div className="form-control rounded-none w-11/12 mx-auto">
         <label className="label ">
           <span className="label-text text-accent">What is your e-mail ?</span>
