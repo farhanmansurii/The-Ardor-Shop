@@ -30,7 +30,7 @@ export default function CarousalProducts({ products }) {
               </button>
             )}
           >
-            {products.map((e) => (
+            {products.slice(1,10).map((e) => (
               <div
                 key={e.id}
                 className="carousel-item  aspect-video w-full flex lg:h-[400px] -z-100 bg-cover bg-center "
