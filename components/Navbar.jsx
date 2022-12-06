@@ -9,7 +9,7 @@ export default function Navbar() {
     dispatch(remove(cartItem));
   };
   return (
-    <div className="navbar bg-secondary/20 backdrop-blur-sm z-50 fixed  font-ibm">
+    <div className="navbar bg-secondary/20 backdrop-blur-sm z-50 fixed border-b-[1px] border-black  font-ibm">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost btn-circle">
