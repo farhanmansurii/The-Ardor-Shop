@@ -9,6 +9,7 @@ export default function ProductDetails({ deets }) {
     dispatch(add(product));
   };
   const [selectedImage, setSelectedImage] = useState(deets.images[0]);
+  const [isButtonLoading, setIsButtonLoading] = React.useState(false);
   return (
     <div className="flex flex-col lg:flex-row w-[96%] mx-auto  mt-2 font-ibm">
       <div className="lg:w-8/12 mb-4">
@@ -33,12 +34,22 @@ export default function ProductDetails({ deets }) {
             <div className="  bg-base-100 text-primary hover:bg-primary hover:text-base-100  uppercase  w-fit py-2  px-3 rounded-none  border-[1px]  border-primary ease-in-out font-normal duration-100">
               ₹{deets.price * 6}
             </div>
-            <button
-              className=" bg-primary text-base-100 hover:bg-base-100 hover:text-primary  uppercase  w-fit py-2  px-10 rounded-none  border-[1px]  border-primary ease-in-out font-normal duration-100"
-              onClick={() => handleAdd(deets)}
-            >
-              Add to Cart
-            </button>
+            {isButtonLoading ? (
+              <button className="btn loading rounded-none bg-primary text-base-100 font-normal uppercase">loading</button>
+            ) : (
+              <button
+                onClick={() => {
+                  setIsButtonLoading(true);
+                  setTimeout(() => {
+                    handleAdd(deets);
+                    setIsButtonLoading(false);
+                  }, 500);
+                }}
+                className=" bg-primary text-base-100 hover:bg-primary-content hover:text-primary  uppercase  w-fit py-2  px-10 rounded-none  border-[1px]  border-primary ease-in-out font-normal duration-100"
+              >
+                Add to Cart
+              </button>
+            )}
           </div>
           <div className="mx-auto text-md lg:text-lg w-10/12   my-2 ">Product Description - {deets.description} </div>
         </div>

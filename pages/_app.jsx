@@ -18,7 +18,7 @@ export default function MyApp({
         showOnShallow={true}
       />
       <Navbar />
-      <div className=" font-ibm py-[4rem] z-0">
+      <div className=" font-ibm pt-[4rem] z-0  " >
         <Component {...pageProps} />
       </div>
     </Provider>
