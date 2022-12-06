@@ -2,7 +2,7 @@ import React from "react";
 export default function login() {
   return (
     <>
-      <div className="font-whyte font-bold text-2xl mx-auto w-11/12 uppercase py-2  my-6 flex ">
+      <div className="font-ibm font-bold text-2xl mx-auto w-11/12 uppercase py-2  my-6 flex ">
         Login
       </div>
       <div className="form-control rounded-none w-11/12 mx-auto">
@@ -26,9 +26,9 @@ export default function login() {
           <span className="label-text ">Remember me ?</span>
           <input type="checkbox" className=" checkbox" />
         </label>
-        <button className=" bg-primary mt-5 text-base-100  w-fit py-2 font-whyte uppercase px-10 rounded-none ">
-          Login
-        </button>
+        <button className=" font-normal  bg-primary text-base-100 hover:bg-base-100 hover:text-primary duration-200 ease-in-out  uppercase  w-fit py-2  px-10 rounded-none border-[1px]  border-primary ">
+            Login
+          </button>
       </div>
     </>
   );

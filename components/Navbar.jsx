@@ -28,26 +28,25 @@ export default function Navbar() {
               />
             </svg>
           </label>
-          <ul
-            tabIndex={0}
-            className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+          <div
+            className="menu menu-compact dropdown-content mt-3 p-2 rounded-box   bg-base-100  w-52"
           >
-            <li>
+            <li className="border-b-2">
               <Link href={"/"}>home</Link>
             </li>
-            <li>
+            <li className="border-b-2">
               <Link href={"/login"}>login</Link>
             </li>
             <li>
               <Link href={"/cart"}>cart</Link>
             </li>
-          </ul>
+          </div>
         </div>
       </div>
       <div className="navbar-center">
         <Link
           href={"/"}
-          className="btn btn-ghost normal-case text-whyte font-normal text-xl"
+          className=" normal-case text-whyte font-normal text-xl"
         >
           ARDOR
         </Link>

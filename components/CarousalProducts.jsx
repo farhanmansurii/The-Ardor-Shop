@@ -37,7 +37,7 @@ export default function CarousalProducts({ products }) {
                 style={{ backgroundImage: `url(${e.images[0]})` }}
               >
                 <div className="flex flex-col-reverse h-full w-full bg-gradient-to-t from-black/60 to-black/20   bottom-0">
-                  <div className=" top-0 flex pb-5 px-4  text-base-100 text-2xl lg:text-3xl ">
+                  <div className=" top-0 flex pb-5 px-4  text-base-100 text-2xl font-ibm uppercase lg:text-3xl ">
                     {" "}
                     {e.title}
                   </div>

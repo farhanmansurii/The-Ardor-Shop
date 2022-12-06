@@ -11,7 +11,7 @@ export default function cart() {
   };
   return (
     <div className="w-11/12 mx-auto">
-      <div className="font-ibm  font-bold text-2xl  py-2  my-6 flex ">Cart</div>
+      <div className="font-ibm  uppercase font-bold text-2xl  py-2  my-6 flex ">Cart</div>
 
       {products.length > 0 ? (
         products.map((e) => (
@@ -53,7 +53,7 @@ export default function cart() {
             )}
             .00
           </div>
-          <button className="   bg-primary text-base-100 hover:bg-base-100 hover:text-primary  uppercase  w-fit py-2  px-10 rounded-none hover:border-2 border-primary font-semibold">
+          <button className="   bg-primary text-base-100 hover:bg-base-100 hover:text-primary  uppercase  w-fit py-2  px-10 rounded-none  border-[1px]  border-primary ease-in-out font-normal duration-100">
             checkout
           </button>
         </>
