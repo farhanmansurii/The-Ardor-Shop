@@ -24,14 +24,14 @@ export default function ProductDetails({ deets }) {
       <div className="mx-auto  gap-4 h-11/12 my-auto py-4">
         <div className="text-xl lg:text-3xl w-10/12 mx-auto ">{deets.title}</div>
         <div>
-          <div className="flex gap-2 w-10/12 mx-auto my-3 ">
-            <div className="border-2 border-primary w-fit px-3  hover:scale-105 duration-200 py-1">S</div>
-            <div className="border-2 border-primary w-fit px-3 hover:scale-105 duration-200 py-1">M</div>
-            <div className="border-2 border-primary w-fit px-3  hover:scale-105 duration-200 py-1">L</div>
-            <div className="border-2 border-primary w-fit px-3  hover:scale-105 duration-200 py-1">XL</div>
+          <div className="flex gap-2 w-10/12 mx-auto my-3 text-secondary  ">
+            <div className="border-2 border-secondary  w-fit px-3  hover:scale-105 duration-200 py-1">S</div>
+            <div className="border-2 border-secondary w-fit px-3 hover:scale-105 duration-200 py-1">M</div>
+            <div className="border-2 border-secondary w-fit px-3  hover:scale-105 duration-200 py-1">L</div>
+            <div className="border-2 border-secondary w-fit px-3  hover:scale-105 duration-200 py-1">XL</div>
           </div>
           <div className="my-5 flex  w-10/12 gap-4 font-bold font-xl    mx-auto">
-            <div className="  bg-base-100 text-primary hover:bg-primary hover:text-base-100  uppercase  w-fit py-2  px-3 rounded-none  border-[1px]  border-primary ease-in-out font-normal duration-100">
+            <div className="   text-secondary hover:bg-primary   uppercase  w-fit py-2  px-3 rounded-none    border-primary ease-in-out font-normal duration-100">
               ₹{deets.price * 6}
             </div>
             {isButtonLoading ? (
@@ -51,7 +51,10 @@ export default function ProductDetails({ deets }) {
               </button>
             )}
           </div>
-          <div className="mx-auto text-md lg:text-lg w-10/12   my-2 ">Product Description - {deets.description} </div>
+          <div className="mx-auto text-md lg:text-lg w-10/12   my-2 "><span className='underline text-secondary'>
+            Product Description 
+            </span>
+            - {deets.description} </div>
         </div>
       </div>
     </div>
