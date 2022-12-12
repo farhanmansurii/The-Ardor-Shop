@@ -2,6 +2,6 @@
 module.exports = {
   reactStrictMode: true,
   images: {
-    domains: ['api.lorem.space'],
+    domains: ['res.cloudinary.com'],
   },
 }

@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import React from 'react';
 import { MdClear } from 'react-icons/md';
 import { useDispatch, useSelector } from 'react-redux';
@@ -18,11 +17,11 @@ export default function cart() {
         products.map((e) => (
           <div key={e.id} className="flex my-3 flex-row gap-3 justify-between pb-4 border-b-[1px] border-accent">
             <div className="flex gap-4 w-full">
-              <Image width={80} height={60} src={e.images[0]} alt={e.title} />
+              <img width={80} height={80} src={e.image} alt={e.title} />
               <div className="text-xl  my-auto">{e.title}</div>
             </div>
             <div className="flex  w-fit gap-3 ">
-              <div className="text-xl text-primary my-auto">₹{e.price * 6}</div>
+              <div className="text-xl text-primary my-auto">₹{e.price}</div>
               <div className="text-xl my-auto">X{e.cartQuantity}</div>
             </div>
             <button onClick={() => handleRemove(e)} className="btn btn-circle p-2 text-black bg-rose-500 my-auto btn-sm w-fit ">
@@ -37,7 +36,7 @@ export default function cart() {
         <>
           <div className="font-ibm text-2xl     mt-6 mb-3 flex ">
             {' '}
-            Subtotal : ₹{products.reduce((sum, i) => (sum += i.cartQuantity * i.price * 6), 0)}
+            Subtotal : ₹{products.reduce((sum, i) => (sum += i.cartQuantity * i.price ), 0)}
             .00
           </div>
           {isButtonLoading ? (

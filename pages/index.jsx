@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import CarousalProducts from '../components/CarousalProducts';
 import ProductRow from '../components/ProductRow';
 export default function Home({ data }) {
+  console.log(data);
   const products = useSelector((state) => state.cart.cartItems);
   const dispatch = useDispatch();
   return (
@@ -17,7 +18,7 @@ export default function Home({ data }) {
 
 export async function getServerSideProps() {
   // Fetch data from external API
-  const res = await fetch(`https://api.escuelajs.co/api/v1/products?limit=20&offset=0`);
+  const res = await fetch(`https://productapi.vercel.app/api/product`);
   const data = await res.json();
 
   // Pass data to the page via props

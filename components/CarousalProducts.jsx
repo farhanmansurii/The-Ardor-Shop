@@ -30,12 +30,13 @@ export default function CarousalProducts({ products }) {
               </button>
             )}
           >
-            {products.slice(1,10).map((e) => (
+            {products.map((e) => (
               <div
                 key={e.id}
                 className="carousel-item  aspect-video w-full flex lg:h-[400px] -z-100 bg-cover bg-center "
-                style={{ backgroundImage: `url(${e.images[0]})` }}
+                style={{ backgroundImage: `url(${e.image})` }}
               >
+                
                 <div className="flex flex-col-reverse h-full w-full  bg-gradient-to-t from-black/60 to-black/20   bottom-0">
                   <div className=" top-0 flex pb-5 px-4  text-base-100 text-2xl font-ibm uppercase lg:text-3xl ">
                     {" "}
