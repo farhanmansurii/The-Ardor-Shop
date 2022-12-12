@@ -51,8 +51,8 @@ export default function ProductDetails({ deets }) {
   );
 }
 export async function getServerSideProps(context) {
-  const id = context.query.slug;
-  const deets = await fetch(`https://productapi.vercel.app/api/product/find/${id}`).then((res) => res.json());
+  const _id = context.query.slug;
+  const deets = await fetch(`https://productapi.vercel.app/api/product/find/${_id}`).then((res) => res.json());
 
   return {
     props: {
