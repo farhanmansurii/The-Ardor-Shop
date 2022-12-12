@@ -9,7 +9,7 @@ export default function Product({ e }) {
     dispatch(add(product));
   };
   return (
-    <div key={e.id} className="flex flex-col pb-2 h-[220px] lg:h-[300px] hover:scale-[95%]  ease-linear  h border-primary font-light   mx-auto font-ibm  duration-200">
+    <div key={e.id} className="flex flex-col pb-2  hover:scale-[95%]  ease-linear  h border-primary font-light   mx-auto font-ibm  duration-200">
       <Link href={`/${e._id}`}>
           <div className=" absolute  flex flex-auto  place-content-end text-black p-2 place-self-end ">
             <BiHeart/></div>

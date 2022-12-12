@@ -11,12 +11,12 @@ export default function ProductDetails({ deets }) {
   return (
     <div className="flex flex-col lg:flex-row w-[96%] mx-auto  mt-2 font-ibm">
       <img src={deets.image} alt={deets.title} width={480} height={480} className="mx-auto" />
-      <div className="mx-auto  gap-4 h-11/12 my-auto py-4">
-        <div className="text-xl lg:text-3xl mx-auto capitalize">{deets.title}</div>
+      <div className="mx-auto  gap-4 h-11/12 w-10/12 lg:w-7/12  my-auto py-4">
+        <div className="text-4xl mx-auto capitalize">{deets.title}</div>
         <div>
-          <div className="py-3">
+          <div className="py-3 text-xs flex">
             {deets.category.map((e) => (
-              <div className=" rounded-full text-white px-3 py-1 bg-secondary hover:bg-secondary-focus w-fit">{e}</div>
+              <div className=" rounded-full text-white px-4 m-1 py-2 bg-secondary hover:bg-secondary-focus w-fit">{e}</div>
             ))}
           </div>
           <div className="flex gap-2  mx-auto my-3 text-secondary  ">
@@ -35,7 +35,7 @@ export default function ProductDetails({ deets }) {
                     setIsButtonLoading(false);
                   }, 500);
                 }}
-                className=" bg-primary text-base-100 hover:bg-primary-content hover:text-primary  uppercase  w-full py-2   rounded-none  border-[1px]  border-primary ease-in-out font-normal duration-100"
+                className=" bg-primary text-base-100 hover:bg-primary-content hover:text-primary  uppercase  w-[200px] py-2   rounded-none  border-[1px]  border-primary ease-in-out font-normal duration-100"
               >
                 Add to Cart
               </button>
