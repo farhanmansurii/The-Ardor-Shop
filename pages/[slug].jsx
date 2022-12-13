@@ -14,7 +14,7 @@ export default function ProductDetails({ deets }) {
       <div className="mx-auto  gap-4 h-11/12 w-10/12 lg:w-7/12  my-auto py-4">
         <div className="text-4xl mx-auto capitalize">{deets.title}</div>
         <div>
-          <div className="py-3 text-xs flex">
+          <div className="py-3 text-xs flex flex-wrap">
             {deets.category.map((e) => (
               <div className=" rounded-full text-white px-4 m-1 py-2 bg-secondary hover:bg-secondary-focus w-fit">{e}</div>
             ))}
@@ -41,7 +41,7 @@ export default function ProductDetails({ deets }) {
               </button>
             )}
           </div>
-          <div className="mx-auto text-md lg:text-lg w-10/12   my-2 ">
+          <div className="mx-auto text-md lg:text-lg   my-2 ">
             <span className="underline text-secondary">Product Description</span>- {deets.description}{' '}
           </div>
         </div>
