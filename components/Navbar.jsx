@@ -28,9 +28,7 @@ export default function Navbar() {
               />
             </svg>
           </label>
-          <div
-            className="menu menu-compact dropdown-content mt-3 p-2 rounded-box   bg-base-100  w-52"
-          >
+          <div className="menu menu-compact dropdown-content mt-3 p-2 rounded-box   bg-base-100  w-52">
             <li className="border-b-2">
               <Link href={"/"}>home</Link>
             </li>
@@ -48,7 +46,7 @@ export default function Navbar() {
           href={"/"}
           className=" normal-case text-whyte font-normal text-xl"
         >
-          ARDOR
+          BE-SHARMA
         </Link>
       </div>
       <div className="navbar-end lg:mr-5">

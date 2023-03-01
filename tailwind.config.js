@@ -1,27 +1,31 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}', './app/**/*.{js,ts,jsx,tsx}'],
+  content: [
+    "./pages/**/*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}",
+    "./app/**/*.{js,ts,jsx,tsx}",
+  ],
   daisyui: {
     themes: [
       {
         mytheme: {
-          primary: '#111111',
+          primary: "#f2f2f2",
 
-          secondary: '#c6b993',
+          secondary: "#f2f2f2",
 
-          accent: '#F2F2F2',
+          accent: "#F2F2F2",
 
-          neutral: '#111111',
+          neutral: "#111111",
 
-          'base-100': '#F2F2F2',
+          "base-100": "#111111",
 
-          info: '#69AED3',
+          info: "#69AED3",
 
-          success: '#50E794',
+          success: "#50E794",
 
-          warning: '#EFB06B',
+          warning: "#EFB06B",
 
-          error: '#F72B4D',
+          error: "#F72B4D",
         },
       },
     ],
@@ -29,10 +33,10 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        whyte: ['Whyte Inktrap'],
-        ibm:['IBM']
+        whyte: ["Whyte Inktrap"],
+        ibm: ["IBM"],
       },
     },
   },
-  plugins: [require('@tailwindcss/line-clamp'), require('daisyui')],
+  plugins: [require("@tailwindcss/line-clamp"), require("daisyui")],
 };

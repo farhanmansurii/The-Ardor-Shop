@@ -1,15 +1,12 @@
-import { useDispatch, useSelector } from 'react-redux';
-import CarousalProducts from '../components/CarousalProducts';
-import ProductRow from '../components/ProductRow';
+import { useDispatch, useSelector } from "react-redux";
+import CarousalProducts from "../components/CarousalProducts";
+import ProductRow from "../components/ProductRow";
 export default function Home({ data }) {
-  console.log(data);
   const products = useSelector((state) => state.cart.cartItems);
   const dispatch = useDispatch();
   return (
     <>
-      <div className="mx-auto w-11/12">
-      
-      </div>
+      <div className="mx-auto w-11/12"></div>
       <CarousalProducts products={data} />
       <ProductRow data={data} title="All Products" />
     </>
