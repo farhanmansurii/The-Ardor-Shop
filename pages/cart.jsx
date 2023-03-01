@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 import { MdClear } from "react-icons/md";
 import { useDispatch, useSelector } from "react-redux";
@@ -7,6 +8,22 @@ export default function cart() {
   const dispatch = useDispatch();
   const handleRemove = (cartItem) => {
     dispatch(remove(cartItem));
+  };
+  const createWhatsAppUrl = (products) => {
+    const message = `Order Details:\n\n${products
+      .map(
+        (p) => `${p.title} x ${p.cartQuantity} = ₹${p.cartQuantity * p.price}`
+      )
+      .join("\n")}\n\nTotal: ₹${products.reduce(
+      (sum, p) => sum + p.cartQuantity * p.price,
+      0
+    )}.00`;
+
+    return `https://wa.me/+919867905275/?text=${encodeURIComponent(message)}`;
+  };
+  const handleCheckout = () => {
+    const url = createWhatsAppUrl(products);
+    window.location.href = url;
   };
   const checkoutOnClick = () => {
     const total = products.reduce(
@@ -67,18 +84,13 @@ export default function cart() {
               loading
             </button>
           ) : (
-            <button
+            <Link
               className="   bg-primary text-base-100 hover:bg-base-100 hover:text-primary  uppercase  w-fit py-2  px-10 rounded-none  border-[1px]  border-primary ease-in-out font-normal duration-100"
-              onClick={() => {
-                setIsButtonLoading(true);
-                setTimeout(() => {
-                  checkoutOnClick();
-                  setIsButtonLoading(false);
-                }, 1000);
-              }}
+              onClick={handleCheckout}
+              href="#"
             >
               checkout
-            </button>
+            </Link>
           )}
         </>
       )}
