@@ -10,8 +10,7 @@ export default function cart() {
     dispatch(remove(cartItem));
   };
   const createWhatsAppUrl = (products) => {
-    const message = `Hi, Jatin I would like to place an order, here are the
-    order details:\n\n${products
+    const message = `Hi, Jatin I would like to place an order, here are the order details:\n\n${products
       .map(
         (p) => `${p.title} x ${p.cartQuantity} = ₹${p.cartQuantity * p.price}`
       )
