@@ -10,7 +10,8 @@ export default function cart() {
     dispatch(remove(cartItem));
   };
   const createWhatsAppUrl = (products) => {
-    const message = `Order Details:\n\n${products
+    const message = `Hi, Jatin I would like to place an order, here are the
+    order details:\n\n${products
       .map(
         (p) => `${p.title} x ${p.cartQuantity} = ₹${p.cartQuantity * p.price}`
       )
@@ -19,7 +20,7 @@ export default function cart() {
       0
     )}.00`;
 
-    return `https://wa.me/+919867905275/?text=${encodeURIComponent(message)}`;
+    return `https://wa.me/+917304787279/?text=${encodeURIComponent(message)}`;
   };
   const handleCheckout = () => {
     const url = createWhatsAppUrl(products);
